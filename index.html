@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kadeřnictví & Kosmetika</title>
+
+<link rel="icon" href="favicon.png" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    visibility:hidden;
+}
+
+/* GLOBAL */
+body{
+    font-family:'Poppins',sans-serif;
+    background:white;
+    color:#333;
+    scroll-behavior:smooth;
+}
+
+/* Scroll animace sekcí */
+
+.reveal{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+    will-change: transform, opacity;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll offset – jen pro menu sekce */
+
+#home,
+#about,
+#hair,
+#cosmetics,
+#contact{
+    scroll-margin-top: 90px;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:white;
+    border-bottom:1px solid #eee;
+    z-index:1000;
+}
+
+.top-bar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.phone{
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.phone a{
+    color:#b89b8c;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.phone i{
+    color:#b89b8c;
+}
+
+.phone a:hover{
+    text-decoration:underline;
+}
+
+.phone i{
+    font-size:13px;
+}
+
+/* MENU */
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    font-weight:500;
+    letter-spacing:2px;   /* MEZERY MEZI PÍSMENY */
+    text-transform:uppercase; /* velká písmena (volitelné) */
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#b89b8c;
+}
+
+/* HERO */
+.hero{
+    padding-top:20px;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-content{
+    max-width:1200px;
+    width:100%;
+    padding:40px 10px;
+
+    display:grid;
+    grid-template-columns: auto 1fr;
+    align-items:center;
+    gap:0px;
+}
+
+.logo{
+    max-width:350px;
+    width:100%;
+    transform: translateY(0px); /* POSUN LOGA */
+}
+
+/* HERO TEXT */
+.hero-right{
+    transform: translateY(-30px); /* POSUN TEXTU + TLAČÍTKA */
+}
+
+.hero-right h1{
+    font-family:'Playfair Display',serif;
+    font-size:52px;
+    font-weight:400;
+    letter-spacing:2px;
+    color:#b89b8c;
+    margin-bottom:25px;
+    
+    line-height:1.2;
+    min-height:65px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:#b89b8c;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#a18678;
+}
+
+/* ABOUT */
+.about{
+    padding:60px 30px;
+    background:#fafafa;
+    text-align:center;
+}
+
+.about h2{
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    color:#b89b8c;
+    margin-bottom:25px;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:50px;
+    line-height:1.7;
+}
+
+.about-gallery{
+    max-width:1000px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.about-gallery img{
+    width:100%;
+    border-radius:15px;
+    object-fit:cover;
+}
+
+/* KRUH NA FOTKU – FIX */
+
+.hair-image{
+    width:60px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    flex-shrink:0;
+}
+
+.hair-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.middle-photo{
+    transform: translateY(-6px); /* POSUN NAHORU */
+}
+
+/* HAIR */
+
+.hair{
+    padding:40px 1px 20px;
+    background:white;
+}
+
+.hair-container{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hair-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:40px;
+    color:#b89b8c;
+    margin-bottom:25px;
+}
+
+.hair-text p{
+    line-height:1.7;
+    margin-bottom:15px;
+    color:#555;
+}
+
+.hair-image img{
+    width:100%;
+    height:100%;
+    border-radius:0;
+    object-fit:cover;
+}
+
+/* mobil */
+
+@media(max-width:900px){
+
+    .hair-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hair-image{
+        order:-1;
+    }
+
+}
+
+/* CONTACT */
+.contact{
+    padding:60px 30px;
+    background:white;
+    text-align:center;
+}
+
+.contact h2{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    color:#b89b8c;
+    margin-bottom:30px;
+}
+
+.contact form{
+    max-width:500px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact input,
+.contact textarea{
+    padding:12px 15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-family:inherit;
+}
+
+.contact textarea{
+    min-height:120px;
+    resize: none;
+}
+
+.contact button{
+    background:#b89b8c;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:500;
+    transition:.3s;
+}
+
+.contact button:hover{
+    background:#a18678;
+}
+
+/* FORM ERRORS */
+
+.error{
+    color:#b89b8c;
+    font-size:12px;
+    text-align:left;
+    margin-top:-8px;
+    margin-bottom:5px;
+    display:block;
+}
+
+input.error-input,
+textarea.error-input{
+    border-color:#b89b8c;
+    background:#fff9f7;
+}
+
+/* FOOTER */
+footer{
+    padding:25px;
+    background:#fafafa;
+    text-align:center;
+    font-size:14px;
+    color:#777;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .hero-content{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .logo{
+        margin:auto;
+    }
+
+    nav ul{
+        gap:15px;
+    }
+
+    .about-gallery{
+        grid-template-columns:1fr;
+    }
+
+    /* KADEŘNICTVÍ NA MOBILU */
+    .hair-container{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+/* MOBILE MENU */
+
+.menu-toggle{
+    display:none;
+    font-size:22px;
+    cursor:pointer;
+    color:#b89b8c;
+}
+
+/* mobil */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-menu{
+        position:absolute;
+        top:70px;
+        right:20px;
+        background:white;
+        border-radius:15px;
+        box-shadow:0 5px 20px rgba(0,0,0,0.1);
+        width:200px;
+
+        /* skryté + animace */
+        opacity:0;
+        transform:translateY(-20px);
+        pointer-events:none;
+        transition:all .3s ease;
+    }
+
+    .nav-menu ul{
+        flex-direction:column;
+        gap:0;
+        padding:15px 0;
+    }
+
+    .nav-menu li{
+        text-align:center;
+    }
+
+    .nav-menu a{
+        display:block;
+        padding:12px;
+    }
+
+    .nav-menu.active{
+        opacity:1;
+        transform:translateY(0);
+        pointer-events:auto;
+    }
+
+    /* Scroll offset pro mobil */
+    #home,
+    #about,
+    #hair,
+    #cosmetics,
+    #contact{
+        scroll-margin-top: 70px;
+    }
+
+}
+
+/* HAIR SECTION */
+
+.hair{
+    padding:40px 1px 20px;
+    background:white;
+}
+
+.hair-container{
+    max-width:1000px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+.hair-image{
+    flex:0 0 350px;
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    text-align:center;
+}
+
+.hair-text{
+    flex:1;
+}
+
+.hair-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    color:#b89b8c;
+    margin-bottom:25px;
+}
+
+.hair-text p{
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+@media (max-width: 768px){
+
+    .hair-image{
+        flex:0 0 180px;
+        width:180px;
+        height:180px;
+        margin:0 auto 20px;
+    }
+
+}
+
+/* COSMETICS SECTION */
+
+.cosmetics{
+    padding:100px 30px;
+    background:white;
+}
+
+.cosmetics-container{
+    max-width:1000px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+/* TEXT */
+.cosmetics-text{
+    flex:1;
+}
+
+.cosmetics-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    color:#b89b8c;
+    margin-bottom:25px;
+}
+
+.cosmetics-text p{
+    line-height:1.7;
+    margin-bottom:20px;
+    color:#555;
+}
+
+/* FOTO */
+.cosmetics-image{
+    flex:0 0 350px;
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+    overflow:hidden;
+}
+
+.cosmetics-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .cosmetics-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .cosmetics-image{
+        width:180px;
+        height:180px;
+        flex:0 0 180px;
+
+        margin-top:20px;
+    }
+
+}
+
+/* MOBILE – hero title + button výš */
+/* MOBILE – hero + about výš */
+@media (max-width: 600px){
+
+    .hero-right{
+        transform: translateY(-60px);
+    }
+
+    .hero-right h1{
+        font-size: 36px;
+        white-space: nowrap;
+    }
+
+    .hero-right .btn{
+        margin-top: -15px;
+    }
+
+    .about{
+        padding-top: 30px;
+        margin-top: -40px;
+    }
+
+    .hair{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Kadeřnictví – posun jen textu nahoru */
+    #hair .hair-text{
+        transform: translateY(-40px);
+    }
+
+    /* Kosmetika – celá sekce výš */
+    #cosmetics{
+        margin-top: -80px;
+    }
+
+    /* Kosmetika – posun textu nahoru */
+    #cosmetics .hair-text{
+        transform: translateY(-50px);
+    }
+
+    /* Kontakt – celá sekce výš */
+    #contact{
+        margin-top: -80px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="top-bar">
+
+        <div class="phone">
+    <i class="fa-solid fa-phone"></i>
+    <a href="tel:+420725007307">+420 725 007 307</a>
+</div>
+
+        <div class="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+</div>
+
+<nav class="nav-menu">
+    <ul>
+        <li><a href="#home">ÚVOD</a></li>
+        <li><a href="#about">O NÁS</a></li>
+        <li><a href="#hair">KADEŘNICTVÍ</a></li>
+        <li><a href="#cosmetics">KOSMETIKA</a></li>
+        <li><a href="#contact">KONTAKT</a></li>
+    </ul>
+</nav>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <div>
+            <img src="logo.png" class="logo" alt="Logo">
+        </div>
+
+        <div class="hero-right">
+
+            <h1>Profesionální péče</h1>
+
+            <a href="#contact" class="btn">
+                Vytvořit rezervaci
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="about">
+
+    <h2 class="reveal">Proč si vybrat nás</h2>
+
+    <p>
+        Nabízíme profesionální služby v oblasti kadeřnictví a kosmetiky
+        s důrazem na kvalitu, preciznost a individuální přístup.
+    </p>
+
+    <div class="about-gallery">
+
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80">
+
+    <img class="middle-photo" src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=800&q=80">
+
+    <img src="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=800&q=80">
+
+</div>
+
+
+</section>
+
+<!-- HAIR -->
+<section id="hair" class="hair">
+
+    <div class="hair-container">
+
+        <!-- FOTO -->
+        <div class="hair-image">
+
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
+                 class="hair-photo">
+
+        </div> <!-- TADY CHYBĚLO UKONČENÍ -->
+
+        <!-- TEXT -->
+        <div class="hair-text">
+
+            <h2 class="reveal">Kadeřnictví</h2>
+
+            <p>
+                V našem kadeřnictví klademe důraz na individuální přístup,
+                kvalitní produkty a precizní práci. Každé klientce i klientovi
+                věnujeme maximální péči, aby se u nás cítili příjemně a odcházeli
+                spokojení.
+            </p>
+
+            <p>
+                Pomůžeme Vám najít styl, který podtrhne Vaši osobnost,
+                přirozenou krásu i sebevědomí. Ať už toužíte po jemné změně
+                nebo výrazném novém looku, jsme tu pro vás.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COSMETICS -->
+<section id="cosmetics" class="hair">
+
+    <div class="hair-container">
+
+        <!-- TEXT -->
+        <div class="hair-text">
+
+            <h2 class="reveal">Kosmetika</h2>
+
+            <p>
+                Nabízíme profesionální kosmetickou péči zaměřenou na zdraví,
+                krásu a přirozený vzhled Vaší pleti. Pracujeme s kvalitními
+                přípravky a individuálním přístupem.
+            </p>
+
+            <p>
+                Dopřejte si chvíli relaxace, regenerace a odborné péče,
+                která podtrhne Vaši přirozenou krásu i sebevědomí.
+            </p>
+
+        </div>
+
+        <!-- FOTO -->
+        <div class="hair-image">
+
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+                 class="hair-photo">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+    <h2 class="reveal">Kontaktujte nás</h2>
+
+    <form novalidate id="contactForm">
+
+    <input type="text" placeholder="Jméno" required>
+    <small class="error"></small>
+
+    <input type="email" placeholder="Email" required>
+    <small class="error"></small>
+
+    <input type="tel" placeholder="Telefon" required>
+    <small class="error"></small>
+
+    <textarea placeholder="Zpráva" required></textarea>
+    <small class="error"></small>
+
+    <button type="submit">
+        Odeslat
+    </button>
+
+</form>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Aiva BEAUTY
+</footer>
+
+
+<script>
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
+
+
+// Smooth scroll s offsetem pro header
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener('click', function(e){
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+
+        if(!target) return;
+
+        // výška headeru
+        const headerHeight = document.querySelector('header').offsetHeight;
+
+        // pozice sekce
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+
+        // finální pozice
+        const offsetPosition = targetPosition - headerHeight;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+
+    });
+
+});
+
+
+// Mobile menu
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-menu a');
+const icon = menuToggle.querySelector('i');
+
+
+menuToggle.addEventListener('click', () => {
+
+    navMenu.classList.toggle('active');
+
+    if(navMenu.classList.contains('active')){
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+    }else{
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+    }
+
+});
+
+
+navLinks.forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        navMenu.classList.remove('active');
+
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+
+    });
+
+});
+
+
+document.addEventListener('click', (e) => {
+
+    if(
+        navMenu.classList.contains('active') &&
+        !navMenu.contains(e.target) &&
+        !menuToggle.contains(e.target)
+    ){
+
+        navMenu.classList.remove('active');
+
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+
+    }
+
+});
+
+
+window.addEventListener('load', () => {
+    document.documentElement.style.visibility = 'visible';
+});
+
+
+// =======================
+// FORM VALIDATION
+// =======================
+
+const form = document.getElementById('contactForm');
+
+
+form.addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    const fields = form.querySelectorAll('input, textarea');
+    let valid = true;
+
+
+    fields.forEach(field => {
+
+        const error = field.nextElementSibling;
+
+        // reset
+        field.classList.remove('error-input');
+        error.textContent = '';
+
+        // required
+        if(field.hasAttribute('required') && !field.value.trim()){
+            error.textContent = 'Toto pole je povinné';
+            field.classList.add('error-input');
+            valid = false;
+        }
+
+        // email
+        if(field.type === 'email' && field.value){
+
+            const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+
+            if(!pattern.test(field.value)){
+                error.textContent = 'Neplatný email';
+                field.classList.add('error-input');
+                valid = false;
+            }
+        }
+
+    });
+
+
+    if(valid){
+        alert('Děkujeme za zprávu 💗');
+        form.reset();
+    }
+
+});
+
+
+// =======================
+// REMOVE ERROR ON TYPING
+// =======================
+
+const fieldsLive = document.querySelectorAll('#contactForm input, #contactForm textarea');
+
+
+fieldsLive.forEach(field => {
+
+    field.addEventListener('input', () => {
+
+        field.classList.remove('error-input');
+
+        const error = field.nextElementSibling;
+
+        if(error){
+            error.textContent = '';
+        }
+
+    });
+
+});
+
+// =======================
+// SCROLL REVEAL ANIMATION
+// =======================
+
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add('active');
+        }
+
+    });
+
+}, {
+    threshold: 0.05,
+    rootMargin: "0px 0px -50px 0px"
+});
+
+reveals.forEach(el => observer.observe(el));
+
+</script>
+
+</body>
+</html>
