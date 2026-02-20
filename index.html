@@ -633,6 +633,31 @@ footer{
     }
 }
 
+    /* HERO LOAD ANIMATION */
+.hero-animate{
+    opacity:0;
+    transform:translateY(20px);
+}
+
+.hero-animate.start{
+    animation: heroFadeUp 0.75s ease-out forwards;
+}
+
+.hero-delay-1.start{
+    animation-delay:0.25s;
+}
+
+.hero-delay-2.start{
+    animation-delay:0.5s;
+}
+
+@keyframes heroFadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+    
 </style>
 </head>
 
@@ -671,14 +696,14 @@ footer{
     <div class="hero-content">
 
         <div>
-            <img src="logo.png" class="logo" alt="Logo">
+            <img src="logo.png" class="logo hero-animate" alt="Logo">
         </div>
 
         <div class="hero-right">
 
-            <h1>Profesionální péče</h1>
+            <h1 class="hero-animate hero-delay-1">Profesionální péče</h1>
 
-            <a href="#contact" class="btn">
+            <a href="#contact" class="btn hero-animate hero-delay-2">
                 Vytvořit rezervaci
             </a>
 
@@ -1020,7 +1045,19 @@ const observer = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => observer.observe(el));
 
+    // HERO LOAD ANIMATION TRIGGER
+window.addEventListener('load', () => {
+
+    const animated = document.querySelectorAll('.hero-animate');
+
+    animated.forEach(el => {
+        el.classList.add('start');
+    });
+
+});
+    
 </script>
 
 </body>
 </html>
+
