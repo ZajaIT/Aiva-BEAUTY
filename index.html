@@ -476,6 +476,56 @@ footer{
     font-size:38px;
     color:#b89b8c;
 }
+    .services-grid{
+    max-width:1100px;
+    margin:50px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:50px;
+}
+
+.service{
+    text-align:center;
+}
+
+.service-icon{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 18px;
+}
+
+.service h3{
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    color:#333;
+    margin-bottom:14px;
+}
+
+.service-list{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    color:#555;
+    line-height:1.6;
+    font-size:14px;
+}
+    @media (max-width: 768px){
+
+    .services-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+        margin-top:35px;
+    }
+
+    .service-icon{
+        width:80px;
+        height:80px;
+    }
+
+}
     
 </style>
 </head>
@@ -546,9 +596,44 @@ který je dnes čím dál vzácnější. Nejsme jen místo, kam si přijdete pro
 </section>
 
     <!-- SERVICES -->
+<!-- SERVICES -->
 <section id="services" class="services">
 
     <h2 class="reveal">Služby</h2>
+
+    <div class="services-grid">
+
+        <div class="service">
+            <img src="skincare.png" alt="Kosmetika" class="service-icon">
+            <h3>Kosmetika</h3>
+            <div class="service-list">
+                <div>Text</div>
+                <div>Text</div>
+                <div>Text</div>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="haircut.png" alt="Kadeřnictví" class="service-icon">
+            <h3>Kadeřnictví</h3>
+            <div class="service-list">
+                <div>Text</div>
+                <div>Text</div>
+                <div>Text</div>
+            </div>
+        </div>
+
+        <div class="service">
+            <img src="curly.png" alt="CurlyHair" class="service-icon">
+            <h3>CurlyHair</h3>
+            <div class="service-list">
+                <div>Text</div>
+                <div>Text</div>
+                <div>Text</div>
+            </div>
+        </div>
+
+    </div>
 
 </section>
 
@@ -817,6 +902,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
