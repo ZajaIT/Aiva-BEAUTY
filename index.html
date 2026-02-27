@@ -553,12 +553,24 @@ footer{
         text-align:center;
     }
 
-    .cosmetics-image{
+        .cosmetics-image{
         width:180px;
         height:180px;
         flex:0 0 180px;
 
         margin-top:20px;
+    }
+
+    /* TEAM MOBILE */
+
+    .team-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .team-image{
+        width:180px;
+        height:180px;
     }
 
 }
@@ -636,6 +648,58 @@ footer{
         transform:translateY(0);
     }
 }
+
+    /* TEAM SECTION */
+
+.team{
+    padding:80px 30px;
+    background:#fafafa;
+    text-align:center;
+}
+
+.team h2{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    color:#b89b8c;
+    margin-bottom:50px;
+}
+
+.team-container{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:50px;
+}
+
+.team-image{
+    width:350px;
+    height:350px;
+    margin:0 auto 20px;
+
+    border-radius:50%;
+    overflow:hidden;
+}
+
+.team-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.team-member h3{
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    margin-bottom:5px;
+    color:#333;
+}
+
+.team-member p{
+    font-size:14px;
+    color:#777;
+}
     
 </style>
 </head>
@@ -661,6 +725,7 @@ footer{
         <li><a href="#about">O NÁS</a></li>
         <li><a href="#hair">KADEŘNICTVÍ</a></li>
         <li><a href="#cosmetics">KOSMETIKA</a></li>
+        <li><a href="#team">NÁŠ TÝM</a></li>
         <li><a href="#contact">KONTAKT</a></li>
     </ul>
 </nav>
@@ -777,7 +842,41 @@ který je dnes čím dál vzácnější. Nejsme jen místo, kam si přijdete pro
 
 </section>
 
+<!-- TEAM -->
+<section id="team" class="team">
 
+    <h2 class="reveal">Seznamte se s námi</h2>
+
+    <div class="team-container">
+
+        <div class="team-member">
+            <div class="team-image">
+                <img src="verca.jpg" alt="Verča">
+            </div>
+            <h3>Verča</h3>
+            <p>kadeřnice</p>
+        </div>
+
+        <div class="team-member">
+            <div class="team-image">
+                <img src="misa.jpg" alt="Míša">
+            </div>
+            <h3>Míša</h3>
+            <p>kadeřnice</p>
+        </div>
+
+        <div class="team-member">
+            <div class="team-image">
+                <img src="kaja.jpg" alt="Kája">
+            </div>
+            <h3>Kája</h3>
+            <p>kosmetička</p>
+        </div>
+
+    </div>
+
+</section>
+    
 <!-- CONTACT -->
 <section id="contact" class="contact">
 
@@ -1028,6 +1127,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
