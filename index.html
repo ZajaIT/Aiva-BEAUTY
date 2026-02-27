@@ -54,8 +54,6 @@ body{
 
 #home,
 #about,
-#hair,
-#cosmetics,
 #contact{
     scroll-margin-top: 90px;
 }
@@ -205,76 +203,6 @@ nav a:hover{
     line-height:1.7;
 }
 
-/* KRUH NA FOTKU – FIX */
-
-.hair-image{
-    width:60px;
-    border-radius:50%;
-    overflow:hidden;
-    margin:auto;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    flex-shrink:0;
-}
-
-.hair-photo{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
-
-/* HAIR */
-
-.hair{
-    padding:40px 1px 20px;
-    background:white;
-}
-
-.hair-container{
-    max-width:1200px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
-}
-
-.hair-text h2{
-    font-family:'Playfair Display',serif;
-    font-size:40px;
-    color:#b89b8c;
-    margin-bottom:25px;
-}
-
-.hair-text p{
-    line-height:1.7;
-    margin-bottom:15px;
-    color:#555;
-}
-
-.hair-image img{
-    width:100%;
-    height:100%;
-    border-radius:0;
-    object-fit:cover;
-}
-
-/* mobil */
-
-@media(max-width:900px){
-
-    .hair-container{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .hair-image{
-        order:-1;
-    }
-
-}
-
 /* CONTACT */
 .contact{
     padding:60px 30px;
@@ -367,13 +295,6 @@ footer{
     nav ul{
         gap:15px;
     }
-
-    
-    /* KADEŘNICTVÍ NA MOBILU */
-    .hair-container{
-        flex-direction:column;
-        text-align:center;
-    }
 }
 
 /* MOBILE MENU */
@@ -432,134 +353,14 @@ footer{
     /* Scroll offset pro mobil */
     #home,
     #about,
-    #hair,
-    #cosmetics,
     #contact{
         scroll-margin-top: 70px;
     }
 
 }
 
-/* HAIR SECTION */
-
-.hair{
-    padding:40px 1px 20px;
-    background:white;
-}
-
-.hair-container{
-    max-width:1000px;
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    gap:60px;
-}
-
-.hair-image{
-    flex:0 0 350px;
-    width:350px;
-    height:350px;
-
-    border-radius:50%;
-    overflow:hidden;
-
-    text-align:center;
-}
-
-.hair-text{
-    flex:1;
-}
-
-.hair-text h2{
-    font-family:'Playfair Display',serif;
-    font-size:38px;
-    color:#b89b8c;
-    margin-bottom:25px;
-}
-
-.hair-text p{
-    line-height:1.7;
-    margin-bottom:20px;
-}
-
-@media (max-width: 768px){
-
-    .hair-image{
-        flex:0 0 180px;
-        width:180px;
-        height:180px;
-        margin:0 auto 20px;
-    }
-
-}
-
-/* COSMETICS SECTION */
-
-.cosmetics{
-    padding:100px 30px;
-    background:white;
-}
-
-.cosmetics-container{
-    max-width:1000px;
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    gap:60px;
-}
-
-/* TEXT */
-.cosmetics-text{
-    flex:1;
-}
-
-.cosmetics-text h2{
-    font-family:'Playfair Display',serif;
-    font-size:38px;
-    color:#b89b8c;
-    margin-bottom:25px;
-}
-
-.cosmetics-text p{
-    line-height:1.7;
-    margin-bottom:20px;
-    color:#555;
-}
-
-/* FOTO */
-.cosmetics-image{
-    flex:0 0 350px;
-    width:350px;
-    height:350px;
-
-    border-radius:50%;
-    overflow:hidden;
-}
-
-.cosmetics-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
-
 /* MOBILE */
 @media(max-width:768px){
-
-    .cosmetics-container{
-        flex-direction:column;
-        text-align:center;
-    }
-
-        .cosmetics-image{
-        width:180px;
-        height:180px;
-        flex:0 0 180px;
-
-        margin-top:20px;
-    }
 
     /* TEAM MOBILE */
 
@@ -596,26 +397,6 @@ footer{
     .about{
         padding-top: 30px;
         margin-top: -40px;
-    }
-
-    .hair{
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /* Kadeřnictví – posun jen textu nahoru */
-    #hair .hair-text{
-        transform: translateY(-40px);
-    }
-
-    /* Kosmetika – celá sekce výš */
-    #cosmetics{
-        margin-top: -80px;
-    }
-
-    /* Kosmetika – posun textu nahoru */
-    #cosmetics .hair-text{
-        transform: translateY(-50px);
     }
 
     /* Kontakt – celá sekce výš */
@@ -704,8 +485,6 @@ footer{
     <ul>
         <li><a href="#home">ÚVOD</a></li>
         <li><a href="#about">O NÁS</a></li>
-        <li><a href="#hair">KADEŘNICTVÍ</a></li>
-        <li><a href="#cosmetics">KOSMETIKA</a></li>
         <li><a href="#team">NÁŠ TÝM</a></li>
         <li><a href="#contact">KONTAKT</a></li>
     </ul>
@@ -745,83 +524,12 @@ footer{
     <h2 class="reveal">Proč si vybrat nás</h2>
 
     <p>
-        Srdečně Vás zveme do našeho rodinného salonu v centru Ostravy. Vytvořili jsme prostor, kde se můžete na chvíli zastavit, uvolnit a svěřit se do rukou odborníků. Zakládáme si na pečlivosti, dlouholetých zkušenostech a lidském přístupu, 
+        Srdečně Vás zveme do našeho salonu v centru Ostravy. Vytvořili jsme prostor, kde se můžete na chvíli zastavit, uvolnit a svěřit se do rukou odbornic. Zakládáme si na pečlivosti, dlouholetých zkušenostech a lidském přístupu, 
 který je dnes čím dál vzácnější. Nejsme jen místo, kam si přijdete pro úpravu – jsme místo, kam se budete chtít vracet.
     </p>
 
 </section>
 
-<!-- HAIR -->
-<section id="hair" class="hair">
-
-    <div class="hair-container">
-
-        <!-- FOTO -->
-        <div class="hair-image">
-
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
-                 class="hair-photo">
-
-        </div> <!-- TADY CHYBĚLO UKONČENÍ -->
-
-        <!-- TEXT -->
-        <div class="hair-text">
-
-            <h2 class="reveal">Kadeřnictví</h2>
-
-            <p>
-                V našem kadeřnictví klademe důraz na individuální přístup,
-                kvalitní produkty a precizní práci. Každé klientce i klientovi
-                věnujeme maximální péči, aby se u nás cítili příjemně a odcházeli
-                spokojení.
-            </p>
-
-            <p>
-                Pomůžeme Vám najít styl, který podtrhne Vaši osobnost,
-                přirozenou krásu i sebevědomí. Ať už toužíte po jemné změně
-                nebo výrazném novém looku, jsme tu pro vás.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- COSMETICS -->
-<section id="cosmetics" class="hair">
-
-    <div class="hair-container">
-
-        <!-- TEXT -->
-        <div class="hair-text">
-
-            <h2 class="reveal">Kosmetika</h2>
-
-            <p>
-                Nabízíme profesionální kosmetickou péči zaměřenou na zdraví,
-                krásu a přirozený vzhled Vaší pleti. Pracujeme s kvalitními
-                přípravky a individuálním přístupem.
-            </p>
-
-            <p>
-                Dopřejte si chvíli relaxace, regenerace a odborné péče,
-                která podtrhne Vaši přirozenou krásu i sebevědomí.
-            </p>
-
-        </div>
-
-        <!-- FOTO -->
-        <div class="hair-image">
-
-            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
-                 class="hair-photo">
-
-        </div>
-
-    </div>
-
-</section>
 
 <!-- TEAM -->
 <section id="team" class="team">
@@ -1088,6 +796,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
