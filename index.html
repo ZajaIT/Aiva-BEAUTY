@@ -594,9 +594,10 @@ footer{
     }
 
     .hero-right h1{
-        font-size: 36px;
-        white-space: nowrap;
-    }
+    font-size: 36px;
+    white-space: normal;   /* povolí zalomení */
+    overflow-wrap: anywhere;  /* když je to fakt těsné */
+}
 
     .hero-right .btn{
         margin-top: -15px;
@@ -1060,5 +1061,6 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
