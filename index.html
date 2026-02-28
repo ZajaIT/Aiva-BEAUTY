@@ -637,6 +637,12 @@ footer{
 }
     @media (max-width: 768px){
 
+        /* TEAM MOBILE TITLE BREAK */
+    .team-title-line1,
+    .team-title-line2{
+        display:block;
+    }
+
     .services-grid{
         grid-template-columns:1fr;
         gap:35px;
@@ -875,7 +881,9 @@ který je dnes čím dál vzácnější. Nejsme jen místo, kam si přijdete pro
 <!-- TEAM -->
 <section id="team" class="team">
 
-    <h2 class="reveal">Seznamte se<br>s námi</h2>
+    <h2 class="reveal">
+  <span class="team-title-line1">Seznamte se</span> <span class="team-title-line2">s námi</span>
+</h2>
 
     <p class="team-text">
         To jsme my, trojčlenný dámský tým, který je tu jen pro Vás. Blondýnka Míša se postará o krátké, střední i dlouhé vlasy. Brunetka Verča je specialistkou na vlasy vlnité a kudrnaté. Poslední a důležitou součástí týmu je kosmetička Kája, které můžete do rukou svěřit svoji pleť.
@@ -1208,6 +1216,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
