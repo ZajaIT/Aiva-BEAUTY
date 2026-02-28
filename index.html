@@ -206,13 +206,15 @@ nav a:hover{
     text-decoration:none;
     border-radius:30px;
     font-weight:500;
-    transition:.3s;
+    transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
     backdrop-filter: blur(3px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
 .btn:hover{
-    background:#f2f2f2;
+    background: rgba(255,248,242,0.90);  /* lehce tmavší/plnější */
+    transform: scale(1.05);              /* jemné zvětšení */
+    box-shadow: 0 14px 35px rgba(0,0,0,0.35);  /* silnější stín */
 }
 
 /* ABOUT */
@@ -1087,6 +1089,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
