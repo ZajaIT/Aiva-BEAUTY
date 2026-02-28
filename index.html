@@ -77,6 +77,19 @@ header{
     justify-content:space-between;
     align-items:center;
 }
+    /* LOGO V HEADERU */
+.header-logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+}
+
+.header-logo img{
+    height:44px;       /* uprav dle potřeby */
+    width:auto;
+    display:block;
+}
 
 .phone{
     font-size:14px;
@@ -151,10 +164,9 @@ nav a:hover{
     width:100%;
     padding:40px 10px;
 
-    display:grid;
-    grid-template-columns: auto 1fr;
+    display:flex;              /* místo gridu */
+    justify-content:center;
     align-items:center;
-    gap:0px;
     position: relative;
     z-index: 2;
 }
@@ -167,7 +179,8 @@ nav a:hover{
 
 /* HERO TEXT */
 .hero-right{
-    transform: translateY(-30px); /* POSUN TEXTU + TLAČÍTKA */
+    transform: translateY(-30px);
+    text-align:center;
 }
 
 .hero-right h1{
@@ -354,6 +367,10 @@ footer{
 
     .menu-toggle{
         display:block;
+    }
+   
+    .header-logo img{
+        height:38px;
     }
 
     .nav-menu{
@@ -643,6 +660,11 @@ footer{
     <a href="tel:+420777654321">+420 777 654 321</a>
 </div>
 
+        <!-- NOVĚ LOGO V HEADERU -->
+    <a href="#home" class="header-logo">
+      <img src="logo.png" alt="Aiva Beauty">
+    </a>
+        
         <div class="menu-toggle">
     <i class="fa-solid fa-bars"></i>
 </div>
@@ -665,10 +687,6 @@ footer{
 <section id="home" class="hero">
 
     <div class="hero-content">
-
-        <div>
-            <img src="logo.png" class="logo hero-animate" alt="Logo">
-        </div>
 
         <div class="hero-right">
 
@@ -1071,6 +1089,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
