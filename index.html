@@ -652,20 +652,34 @@ footer{
         grid-template-columns:1fr;
         gap:18px;
     }
-        /* CURLY MOBILE */
+        /* CURLY MOBILE – pořadí: nadpis, fotka, text */
+.curly-method .curly-container{
+    grid-template-columns:1fr;
+    grid-template-areas:
+        "title"
+        "image"
+        "text";
+    gap:18px;
+}
 
-    .curly-container{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
+.curly-method .curly-text{
+    display: contents;
+    text-align:center;
+}
 
-    .curly-text{
-        text-align:center;
-    }
+.curly-method .curly-text h2{
+    grid-area:title;
+    font-size:26px;
+}
 
-    .curly-text h2{
-        font-size:26px;
-    }
+.curly-method .curly-image{
+    grid-area:image;
+}
+
+.curly-method .curly-text p{
+    grid-area:text;
+    text-align:center;
+}
 
 }
     .services-note{
@@ -1187,6 +1201,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
