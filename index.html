@@ -548,16 +548,20 @@ footer{
 }
 
 .testimonials-grid{
-    max-width:1100px;
+    max-width:1200px;
     margin:0 auto;
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:30px;
+    grid-template-columns:repeat(4, 1fr);
+    gap:0;
 }
 
 .testimonial{
-    padding:10px 0;
+    padding:0 25px;
     text-align:left;
+    border-left:1px solid rgba(184,155,140,0.4);
+}
+    .testimonial:last-child{
+    border-right:1px solid rgba(184,155,140,0.4);
 }
 
 .testimonial p{
@@ -1170,6 +1174,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
