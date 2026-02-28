@@ -201,13 +201,14 @@ nav a:hover{
 .btn{
     display:inline-block;
     padding:14px 35px;
-    background:#ffffff;        /* bílé */
-    color:#333;                /* tmavý text */
+    background: rgba(255,255,255,0.85);  /* ne čistá bílá */
+    color:#333;
     text-decoration:none;
     border-radius:30px;
     font-weight:500;
     transition:.3s;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
 .btn:hover{
@@ -1086,6 +1087,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
