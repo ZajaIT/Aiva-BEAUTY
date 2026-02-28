@@ -743,7 +743,27 @@ footer{
     line-height:1.7;
     color:#555;
 }
-    
+    /* MOBIL LANDSCAPE – oprava uříznutého nadpisu v hero */
+@media (max-height: 500px) and (orientation: landscape){
+
+    .hero{
+        padding-top: 90px; /* aby text nebyl pod fixed headerem */
+    }
+
+    .hero-right{
+        transform: translateY(0); /* zruší posun nahoru jen v landscape */
+    }
+
+    .hero-right h1{
+        min-height: 0;      /* aby se nevynucovala zbytečná výška */
+        font-size: 28px;    /* menší, ať se vejde do nízké výšky */
+        line-height: 1.15;  /* ať se text nesežere */
+    }
+
+    .hero-content{
+        padding: 20px 10px; /* méně vertikálního paddingu */
+    }
+}
 </style>
 </head>
 
@@ -1222,6 +1242,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
