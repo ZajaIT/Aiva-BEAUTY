@@ -951,11 +951,24 @@ form.addEventListener('submit', function(e){
         error.textContent = '';
 
         // required
-        if(field.hasAttribute('required') && !field.value.trim()){
-            error.textContent = 'Toto pole je povinné';
-            field.classList.add('error-input');
-            valid = false;
-        }
+if(field.hasAttribute('required') && !field.value.trim()){
+
+    if(field.placeholder === "Jméno"){
+        error.textContent = "Zadejte prosím svoje jméno";
+    }
+    else if(field.placeholder === "Email"){
+        error.textContent = "Zadejte prosím svůj email";
+    }
+    else if(field.placeholder === "Telefon"){
+        error.textContent = "Zadejte prosím svůj telefon";
+    }
+    else if(field.tagName.toLowerCase() === "textarea"){
+        error.textContent = "Napište prosím Vaši zprávu";
+    }
+
+    field.classList.add('error-input');
+    valid = false;
+}
 
         // email
         if(field.type === 'email' && field.value){
@@ -1041,6 +1054,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
