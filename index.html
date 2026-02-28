@@ -553,6 +553,20 @@ footer{
         width:80px;
         height:80px;
     }
+        /* CURLY MOBILE */
+
+    .curly-container{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .curly-text{
+        text-align:center;
+    }
+
+    .curly-text h2{
+        font-size:26px;
+    }
 
 }
     .services-note{
@@ -562,6 +576,40 @@ footer{
     font-size:14px;
     color:#777;
     line-height:1.6;
+}
+    /* CURLY METHOD SECTION */
+
+.curly-method{
+    padding:80px 30px;
+    background:white;
+}
+
+.curly-container{
+    max-width:1100px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
+}
+
+.curly-image img{
+    width:100%;
+    border-radius:18px;
+    display:block;
+}
+
+.curly-text h2{
+    font-family:'Playfair Display',serif;
+    font-size:32px;
+    color:#b89b8c;
+    margin-bottom:20px;
+}
+
+.curly-text p{
+    line-height:1.7;
+    color:#555;
 }
     
 </style>
@@ -684,6 +732,29 @@ který je dnes čím dál vzácnější. Nejsme jen místo, kam si přijdete pro
 
 </section>
 
+    <section class="curly-method">
+
+    <div class="curly-container">
+
+        <div class="curly-image">
+            <img src="curlyfoto.jpeg" alt="Curly Hair proměna">
+        </div>
+
+        <div class="curly-text">
+            <h2>Curly Hair metoda</h2>
+            <p>
+                Curly Hair metoda je speciální technika střihu a péče určená pro
+                vlnité a kudrnaté vlasy. Pracujeme s přirozenou strukturou vlasů
+                tak, aby vynikl jejich tvar, objem i definice. Důraz klademe na
+                správnou hydrataci a individuální přístup ke každému typu kudrn.
+                Výsledkem jsou zdravé, pružné a přirozeně krásné vlasy.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+    
 <!-- TEAM -->
 <section id="team" class="team">
 
@@ -969,6 +1040,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
