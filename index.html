@@ -532,6 +532,49 @@ footer{
     line-height:1.7;
     color:#555;
 }
+    /* TESTIMONIALS */
+
+.testimonials{
+    padding:80px 30px;
+    background:white;
+    text-align:center;
+}
+
+.testimonials h2{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    color:#b89b8c;
+    margin-bottom:40px;
+}
+
+.testimonials-grid{
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:30px;
+}
+
+.testimonial{
+    background:#fafafa;
+    border:1px solid #eee;
+    border-radius:18px;
+    padding:22px 22px;
+    text-align:left;
+}
+
+.testimonial p{
+    color:#555;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.testimonial figcaption{
+    margin-top:12px;
+    color:#333;
+    font-weight:500;
+    font-size:14px;
+}
 
     /* SERVICES SECTION */
 
@@ -596,6 +639,11 @@ footer{
     .service-icon{
         width:80px;
         height:80px;
+    }
+            /* TESTIMONIALS MOBILE */
+    .testimonials-grid{
+        grid-template-columns:1fr;
+        gap:18px;
     }
         /* CURLY MOBILE */
 
@@ -808,6 +856,37 @@ který je dnes čím dál vzácnější. Nejsme jen místo, kam si přijdete pro
     <div class="team-single">
         <img src="team.png" alt="Náš tým">
     </div>
+
+</section>
+
+    <!-- TESTIMONIALS -->
+<section class="testimonials">
+
+  <h2 class="reveal">Spokojené zákaznice</h2>
+
+  <div class="testimonials-grid">
+
+    <figure class="testimonial">
+      <p>„Skvělý přístup, příjemná atmosféra a výsledek přesně podle přání. Určitě přijdu znovu.“</p>
+      <figcaption>— Petra K.</figcaption>
+    </figure>
+
+    <figure class="testimonial">
+      <p>„Konečně salon, kde si dávají záležet na detailech. Vlasy vypadají zdravě a upraveně i bez námahy.“</p>
+      <figcaption>— Veronika M.</figcaption>
+    </figure>
+
+    <figure class="testimonial">
+      <p>„Kosmetické ošetření bylo jemné, profesionální a pleť byla viditelně rozzářená už po první návštěvě.“</p>
+      <figcaption>— Lucie S.</figcaption>
+    </figure>
+
+    <figure class="testimonial">
+      <p>„Mám vlnité vlasy a tady mi konečně poradili, co funguje. Kudrny mají tvar a drží i další dny.“</p>
+      <figcaption>— Andrea B.</figcaption>
+    </figure>
+
+  </div>
 
 </section>
     
@@ -1094,6 +1173,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
