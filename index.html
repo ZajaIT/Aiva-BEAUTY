@@ -71,13 +71,13 @@ header{
 .top-bar{
     max-width:1200px;
     margin:auto;
-    padding:10px 30px;   /* můžeš lehce zmenšit horní/dolní padding */
+    padding:10px 30px;   
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    height:70px;          /* pevná výška pruhu */
+    height:70px;          
 }
     /* LOGO V HEADERU */
 .header-logo{
@@ -130,7 +130,7 @@ nav a{
     color:#444;
     font-weight:500;
     letter-spacing:2px;   /* MEZERY MEZI PÍSMENY */
-    text-transform:uppercase; /* velká písmena (volitelné) */
+    text-transform:uppercase; /* velká písmena */
     transition:.3s;
 }
 
@@ -166,7 +166,7 @@ nav a:hover{
     width:100%;
     padding:40px 10px;
 
-    display:flex;              /* místo gridu */
+    display:flex;              
     justify-content:center;
     align-items:center;
     position: relative;
@@ -447,7 +447,6 @@ footer{
 }
 
 /* MOBILE – hero title + button výš */
-/* MOBILE – hero + about výš */
 @media (max-width: 600px){
 
     .hero-line-1,
@@ -460,8 +459,8 @@ footer{
 
     .hero-right h1{
     font-size: 36px;
-    white-space: normal;   /* povolí zalomení */
-    overflow-wrap: anywhere;  /* když je to fakt těsné */
+    white-space: normal;   
+    overflow-wrap: anywhere;  
 }
 
     .hero-right .btn{
@@ -669,7 +668,7 @@ footer{
         gap:18px;
     }
            
-        /* CURLY MOBILE – pořadí: nadpis, fotka, text */
+        /* CURLY MOBILE */
 .curly-method .curly-container{
     grid-template-columns:1fr;
     grid-template-areas:
@@ -747,7 +746,7 @@ footer{
     line-height:1.7;
     color:#555;
 }
-    /* MOBIL LANDSCAPE – oprava uříznutého nadpisu v hero */
+    /* MOBIL LANDSCAPE */
 @media (max-height: 500px) and (orientation: landscape){
 
     .hero{
@@ -759,7 +758,7 @@ footer{
     }
 
     .hero-right h1{
-        font-size: 36px;   /* stejná velikost jako mobil portrait */
+        font-size: 36px;   
         min-height: 0;
     }
 
@@ -1248,6 +1247,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
