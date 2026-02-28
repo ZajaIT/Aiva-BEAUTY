@@ -216,6 +216,28 @@ nav a:hover{
     color:#b89b8c;
     margin-bottom:30px;
 }
+    .contact-info{
+    margin-bottom:30px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:center;
+}
+
+.contact-info i{
+    color:#b89b8c;
+    margin-right:8px;
+}
+
+.contact-info a{
+    text-decoration:none;
+    color:#444;
+    font-weight:500;
+}
+
+.contact-info a:hover{
+    color:#b89b8c;
+}
 
 .contact form{
     max-width:500px;
@@ -678,6 +700,18 @@ který je dnes čím dál vzácnější. Nejsme jen místo, kam si přijdete pro
 
     <h2 class="reveal">Kontaktujte nás</h2>
 
+    <div class="contact-info">
+    <div>
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+420777654321">+420 777 654 321</a>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:info@aivabeauty.cz">info@aivabeauty.cz</a>
+    </div>
+</div>
+
     <form novalidate id="contactForm">
 
     <input type="text" placeholder="Jméno" required>
@@ -923,6 +957,7 @@ window.addEventListener('load', () => {
 
 </body>
 </html>
+
 
 
 
